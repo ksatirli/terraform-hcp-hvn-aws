@@ -44,7 +44,7 @@ This Terraform Module provisions a HashiCorp Virtual Network for use with Amazon
 
 ## Author Information
 
-This module is maintained by the contributors listed on [GitHub](https://github.com/ksatirli/terraform-hcp-aws-hvn/graphs/contributors).
+This module is maintained by the contributors listed on [GitHub](https://github.com/ksatirli/terraform-hcp-hvn-aws/graphs/contributors).
 
 ## License
 

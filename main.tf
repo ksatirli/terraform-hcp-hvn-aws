@@ -6,7 +6,7 @@ resource "hcp_hvn" "main" {
   cidr_block     = var.cidr_block
 }
 
-# establish a peering between the VPC and HVN
+# establish a peering connection between the VPC and HVN
 # see https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/resources/aws_network_peering
 resource "hcp_aws_network_peering" "main" {
   hvn_id          = hcp_hvn.main.hvn_id

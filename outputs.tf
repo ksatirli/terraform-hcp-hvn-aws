@@ -1,15 +1,15 @@
 output "hcp_hvn" {
-  description = "Exported Attributes for `hcp_hvn.main`"
+  description = "Exported Attributes for `hcp_hvn.main`."
   value       = hcp_hvn.main
 }
 
 output "hcp_aws_network_peering" {
-  description = "Exported Attributes for `hcp_aws_network_peering.main`"
+  description = "Exported Attributes for `hcp_aws_network_peering.main`."
   value       = hcp_aws_network_peering.main
 }
 
 output "aws_vpc_peering_connection_accepter" {
-  description = "Exported Attributes for `aws_vpc_peering_connection_accepter.main`"
+  description = "Exported Attributes for `aws_vpc_peering_connection_accepter.main`."
   value       = aws_vpc_peering_connection_accepter.main
 }
 

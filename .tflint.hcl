@@ -10,12 +10,14 @@ plugin "aws" {
   source  = "github.com/terraform-linters/tflint-ruleset-aws"
 }
 
+# required providers MUST be set in the root module, not in (this) child module
 rule "terraform_required_providers" {
-  enabled = true
+  enabled = false
 }
 
+# required version MUST be set in the root module, not in (this) child module
 rule "terraform_required_version" {
-  enabled = true
+  enabled = false
 }
 
 rule "terraform_naming_convention" {

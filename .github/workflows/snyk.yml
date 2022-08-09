@@ -3,7 +3,6 @@ name: "Security Scan: Snyk IaC"
 
 on:
   pull_request:
-  push:
 
 jobs:
   snyk:
@@ -16,11 +15,11 @@ jobs:
         # The Snyk IaC GitHub Action currently only supports single files (via the `file` attribute in `with`).
         # To work around this, a GitHub Actions Strategy is used to provide the files that should be tested.
         terraform_files:
-          - examples/providers.tf
-          - examples/main.tf
-          - examples/variables.tf
-          - examples/terraform.tf
-          - examples/outputs.tf
+          - "./examples/basic/providers.tf"
+          - "./examples/basic/main.tf"
+          - "./examples/basic/variables.tf"
+          - "./examples/basic/terraform.tf"
+          - "./examples/basic/outputs.tf"
 
     steps:
       - name: Checkout Repository

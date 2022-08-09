@@ -34,9 +34,9 @@ This Terraform Module provisions a HashiCorp Virtual Network for use with Amazon
 
 | Name | Description |
 |------|-------------|
-| aws_vpc_peering_connection_accepter | Exported Attributes for `aws_vpc_peering_connection_accepter.main` |
-| hcp_aws_network_peering | Exported Attributes for `hcp_aws_network_peering.main` |
-| hcp_hvn | Exported Attributes for `hcp_hvn.main` |
+| aws_vpc_peering_connection_accepter | Exported Attributes for `aws_vpc_peering_connection_accepter.main`. |
+| hcp_aws_network_peering | Exported Attributes for `hcp_aws_network_peering.main`. |
+| hcp_hvn | Exported Attributes for `hcp_hvn.main`. |
 | portal_hvn_overview_url | HashiCorp Cloud Platform HVN Overview URL. |
 | portal_hvn_peering_url | HashiCorp Cloud Platform HVN Peering URL. |
 | portal_hvn_route_table_url | HashiCorp Cloud Platform HVN Route Table URL. |

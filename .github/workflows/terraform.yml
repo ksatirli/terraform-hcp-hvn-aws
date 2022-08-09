@@ -14,7 +14,7 @@ jobs:
       # see https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstrategyfail-fast
       fail-fast: false
       matrix:
-        workspaces:
+        examples:
           - "./examples/basic"
 
     steps:
@@ -37,14 +37,14 @@ jobs:
       - name: Initialize Terraform for Examples
         run: terraform init
         env:
-          working-dir: "${{ matrix.workspaces }}"
+          working-dir: "${{ matrix.examples }}"
 
       - name: Format Terraform code for Examples
         run: terraform fmt -check -recursive
         env:
-          working-dir: "${{ matrix.terraform_directories }}"
+          working-dir: "${{ matrix.examples }}"
 
-      - name: Validate Terraform code for examples
+      - name: Validate Terraform code for Examples
         run: terraform validate
         env:
-          working-dir: "${{ matrix.terraform_directories }}"
+          working-dir: "${{ matrix.examples }}"

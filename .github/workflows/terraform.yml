@@ -29,17 +29,22 @@ jobs:
           terraform_wrapper: false
           terraform_version: ${{ secrets.TERRAFORM_VERSION }}
 
-      - name: Initialize Terraform for Workspace
+      - name: Format Terraform code for Module
+        run: terraform fmt -check -recursive
+        env:
+          working-dir: "./"
+
+      - name: Initialize Terraform for Examples
         run: terraform init
         env:
           working-dir: "${{ matrix.workspaces }}"
 
-      - name: Format Terraform code
+      - name: Format Terraform code for Examples
         run: terraform fmt -check -recursive
         env:
           working-dir: "${{ matrix.terraform_directories }}"
 
-      - name: Validate Terraform code
+      - name: Validate Terraform code for examples
         run: terraform validate
         env:
           working-dir: "${{ matrix.terraform_directories }}"

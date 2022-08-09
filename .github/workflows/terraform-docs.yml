@@ -29,4 +29,4 @@ jobs:
           output-file: "README.md"
           output-method: inject
           git-push: true
-          working-dir: "./${{ matrix.workspaces }}"
+          working-dir: "${{ matrix.workspaces }}"

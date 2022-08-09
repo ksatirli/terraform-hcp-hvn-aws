@@ -15,7 +15,7 @@ This Terraform Module provisions a HashiCorp Virtual Network for use with Amazon
 
 * HashiCorp Cloud Platform (HCP) [Account](https://portal.cloud.hashicorp.com/sign-in)
 * Amazon Web Services (AWS) [Account](https://aws.amazon.com/account/)
-* Terraform `1.1.x` or newer.
+* Terraform `1.2.x` or newer.
 
 ## Usage
 

@@ -15,11 +15,36 @@ This Terraform Module provisions a HashiCorp Virtual Network for use with Amazon
 
 * HashiCorp Cloud Platform (HCP) [Account](https://portal.cloud.hashicorp.com/sign-in)
 * Amazon Web Services (AWS) [Account](https://aws.amazon.com/account/)
-* Terraform `1.1.x` or newer.
+* Terraform `1.2.x` or newer.
+
+## Usage
+
+<!-- BEGIN_TF_DOCS -->
+### Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| cidr_block | The CIDR range of the HVN. | `string` | n/a | yes |
+| identifier | The ID of the HashiCorp Virtual Network (HVN). | `string` | n/a | yes |
+| peer_account_id | The account ID of the peer VPC in AWS. | `string` | n/a | yes |
+| peer_vpc_id | The ID of the peer VPC in AWS. | `string` | n/a | yes |
+| region | AWS Region to deploy HVN in. | `string` | n/a | yes |
+
+### Outputs
+
+| Name | Description |
+|------|-------------|
+| aws_vpc_peering_connection_accepter | Exported Attributes for `aws_vpc_peering_connection_accepter.main`. |
+| hcp_aws_network_peering | Exported Attributes for `hcp_aws_network_peering.main`. |
+| hcp_hvn | Exported Attributes for `hcp_hvn.main`. |
+| portal_hvn_overview_url | HashiCorp Cloud Platform HVN Overview URL. |
+| portal_hvn_peering_url | HashiCorp Cloud Platform HVN Peering URL. |
+| portal_hvn_route_table_url | HashiCorp Cloud Platform HVN Route Table URL. |
+<!-- END_TF_DOCS -->
 
 ## Author Information
 
-This module is maintained by the contributors listed on [GitHub](https://github.com/ksatirli/terraform-hcp-aws-hvn/graphs/contributors).
+This module is maintained by the contributors listed on [GitHub](https://github.com/ksatirli/terraform-hcp-hvn-aws/graphs/contributors).
 
 ## License
 

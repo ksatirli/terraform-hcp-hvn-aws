@@ -2,7 +2,6 @@
 name: "Code Quality: Terraform"
 
 on:
-  pull_request:
   push:
 
 jobs:
@@ -14,8 +13,8 @@ jobs:
       # see https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstrategyfail-fast
       fail-fast: false
       matrix:
-        workspaces:
-          - "examples/basic"
+        examples:
+          - "./examples/basic"
 
     steps:
       - name: Checkout Repository
@@ -29,17 +28,22 @@ jobs:
           terraform_wrapper: false
           terraform_version: ${{ secrets.TERRAFORM_VERSION }}
 
-      - name: Initialize Terraform for Workspace
-        run: terraform init
-        env:
-          working-dir: "${{ matrix.workspaces }}"
-
-      - name: Format Terraform code
+      - name: Format Terraform code for Module
         run: terraform fmt -check -recursive
         env:
-          working-dir: "${{ matrix.terraform_directories }}"
+          working-dir: "./"
 
-      - name: Validate Terraform code
+      - name: Initialize Terraform for Examples
+        run: terraform init
+        env:
+          working-dir: "${{ matrix.examples }}"
+
+      - name: Format Terraform code for Examples
+        run: terraform fmt -check -recursive
+        env:
+          working-dir: "${{ matrix.examples }}"
+
+      - name: Validate Terraform code for Examples
         run: terraform validate
         env:
-          working-dir: "${{ matrix.terraform_directories }}"
+          working-dir: "${{ matrix.examples }}"
